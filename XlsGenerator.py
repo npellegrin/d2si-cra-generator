@@ -10,10 +10,10 @@ import openpyxl
 # Params
 #
 d2si_text_params = {
-	"d2si.consultant.name":"",
-	"d2si.administrative.name":"",
-	"d2si.contract":"",
-	"client.name":""
+	"d2si.consultant.name":"John Doe",
+	"d2si.administrative.name":"D2SI - contact administratif : Lisa Doe\nTél : 01 00 00 00 00\nlisa.doe@d2-si.eu",
+	"d2si.contract":"123456789 - DU 01/02/16 AU 30/06/16",
+	"client.name":"BNP - JACK A / SAM C / BOB D"
 }
 d2si_image_params = {
 	"d2si.logo":"d2si.png",
