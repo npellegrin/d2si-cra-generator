@@ -1,17 +1,18 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import locale
 import calendar
 import datetime
-import openpyxl
+import locale
 import json
+import openpyxl
+import sys
 
 # Debug mode
 debug = False
 
 # Load params
-with open('data.json') as data_file:
+with open(sys.argv[1]) as data_file:
 	params = json.load(data_file)
 
 # Harcoded params
