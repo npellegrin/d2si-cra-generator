@@ -1,0 +1,50 @@
+{
+	"template": "BNP_template.xlsx",
+	"output": "John Doe - BNP CRA - 2016.02.xlsx",
+	"company": {
+		"logo": "d2si.png",
+		"administrative": {"name": "D2SI - contact administratif : Lisa Parks\nTél : 01 00 00 00 00\nlisa.parks@d2-si.eu"},
+		"employee": {
+			"name": "John Doe",
+			"signature": "john_doe.png",
+			"contract": "123456789 - DU 01/02/16 AU 30/06/16"
+		}
+	},
+	"client": {"name": "BNP - JACK A / SAM C / BOB D"},
+	"year": 2016,
+	"month": 2,
+	"day": 22,
+	"worked_days": {
+		"1": {"AM":true,"PM":true},
+		"2": {"AM":true,"PM":true},
+		"3": {"AM":true,"PM":true},
+		"4": {"AM":true,"PM":true},
+		"5": {"AM":true,"PM":true},
+		"6": {"AM":true,"PM":true},
+		"7": {"AM":true,"PM":true},
+		"8": {"AM":true,"PM":true},
+		"9": {"AM":true,"PM":true},
+		"10": {"AM":true,"PM":true},
+		"11": {"AM":true,"PM":true},
+		"12": {"AM":true,"PM":true},
+		"13": {"AM":true,"PM":true},
+		"14": {"AM":true,"PM":true},
+		"15": {"AM":true,"PM":true},
+		"16": {"AM":true,"PM":true},
+		"17": {"AM":true,"PM":true},
+		"18": {"AM":true,"PM":true},
+		"19": {"AM":true,"PM":true},
+		"20": {"AM":true,"PM":true},
+		"21": {"AM":true,"PM":true},
+		"22": {"AM":true,"PM":true},
+		"23": {"AM":true,"PM":true},
+		"24": {"AM":true,"PM":true},
+		"25": {"AM":true,"PM":true},
+		"26": {"AM":true,"PM":true},
+		"27": {"AM":true,"PM":true},
+		"28": {"AM":true,"PM":true},
+		"29": {"AM":true,"PM":true},
+		"sum": {"AM":29,"PM":29}
+	},
+	"extra_worked_days": {}
+}
