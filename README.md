@@ -14,6 +14,7 @@ Excel:
 Xml:
  * BeautifulSoup
  * lxml (recomended)
+
 I recomand to set up a virtualenv in order to run the tool.
 
 ### System packages
