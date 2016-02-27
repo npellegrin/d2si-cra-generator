@@ -9,9 +9,10 @@
 
 import bs4
 import json
+import sys
 
 # Open file
-sygesFile = open("data/syges.html", encoding = "iso-8859-1")
+sygesFile = open(sys.argv[1], encoding = "iso-8859-1")
 
 # Parse data
 sygesSoup = bs4.BeautifulSoup(sygesFile.read(), 'html.parser')
@@ -32,4 +33,4 @@ for tag in data:
 		extracted[tag["title"]] = tag["value"]
 
 # Save data
-json.dump(extracted, open("data/syges_data.json", 'w'))
+json.dump(extracted, open(sys.argv[2], 'w'))
