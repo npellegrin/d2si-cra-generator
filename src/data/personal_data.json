@@ -1,0 +1,14 @@
+{
+	"template": "BNP_template.xlsx",
+	"output": "John Doe - BNP CRA - 2016.02.xlsx",
+	"company": {
+		"logo": "d2si.png",
+		"administrative": {"name": "D2SI - contact administratif : Lisa Parks\nTél : 01 00 00 00 00\nlisa.parks@d2-si.eu"},
+		"employee": {
+			"name": "John Doe",
+			"signature": "john_doe.png",
+			"contract": "123456789 - DU 01/02/16 AU 30/06/16"
+		}
+	},
+	"client": {"name": "BNP - JACK A / SAM C / BOB D"}
+}
