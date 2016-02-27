@@ -7,13 +7,13 @@
 #python DownloadSyges.py data/credentials.json data/syges.html
 
 # Extract data from html
-python ExtractData.py data/syges.html data/syges_data.json
+python src/ExtractData.py src/data/syges.html src/data/syges_data.json
 
 # Convert to data for XLS generation
-python ConvertData.py data/syges_data.json data/personal_data.json data/xls_data.json
+python src/ConvertData.py src/data/syges_data.json src/data/personal_data.json src/data/xls_data.json
 
 # Generate XLS
-python XlsGenerator.py data/xls_data.json
+python src/XlsGenerator.py src/data/xls_data.json
 
 # Send email
 # TODO
