@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+#
+# This script generates the CRA from Xls template and data provided in json format
+#
+
 import calendar
 import datetime
 import locale
