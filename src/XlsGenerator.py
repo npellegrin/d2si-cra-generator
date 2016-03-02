@@ -87,9 +87,13 @@ for row in ws.iter_rows():
 					img = openpyxl.drawing.image.Image(data_value)
 					img.anchor(cell = cell, anchortype = "oneCell")
 					ws.add_image(img)
-				elif isinstance(data_value, bool) and data_value is True:
-					# Data is a checkbox (true)
-					cell.value = "X"
+				elif isinstance(data_value, bool):
+					if data_value is True:
+						# Data is a checkbox (true)
+						cell.value = "X"
+					else:
+						# Data is a checkbox (false)
+						cell.value = ""
 				else:
 					# Data is a value
 					cell.value = data_value
