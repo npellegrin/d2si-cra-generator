@@ -32,7 +32,10 @@ worked_days_am = 0
 worked_days_pm = 0
 for day in sygesData:
 	date = datetime.datetime.strptime(day, "%A %d/%m/%y")
-	amount = float(sygesData[day])
+	if sygesData[day] == "":
+		amount = 0.0
+	else:
+		amount = float(sygesData[day])
 	if amount == 1.0:
 		merged["worked_days"]["{d.day}".format(d=date)] = {"AM":True, "PM":True}
 		worked_days_am = worked_days_am + amount
