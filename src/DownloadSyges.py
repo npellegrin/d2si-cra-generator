@@ -15,6 +15,9 @@ import ssl
 import sys
 import urllib.request
 
+# Debug
+debug = False
+
 # Credentials
 with open(sys.argv[1]) as data_file:
 	credentials = json.load(data_file)
@@ -44,15 +47,18 @@ page = {}
 html = {}
 
 # Main page
-print("--- basic authentication...")
+if debug:
+	print("--- basic authentication...")
 page[0] = urlOpener.open("https://cra.d2-si.eu/sygesweb")
 html[0] = page[0].read()
 
 # Web authentication
-print("--- web authentication...")
+if debug:
+	print("--- web authentication...")
 sygesSoup = bs4.BeautifulSoup(html[0], 'html.parser')
 loginUrl = sygesSoup.find("form", {"name":"SYW_EC_IDENTIFICATION"}).attrs["action"]
-print("found url: "+loginUrl)
+if debug:
+	print("found url: "+loginUrl)
 loginData = urllib.parse.urlencode({
 	'WD_BUTTON_CLICK_': "BTN_VALUTI",
 	'WD_ACTION_': "",
@@ -65,7 +71,8 @@ html[1] = page[1].read()
 # Popup page (useless, but need to validate form)
 loginSoup = bs4.BeautifulSoup(html[1], 'html.parser')
 popupUrl = loginSoup.find("form", {"name":"SYW_TR_CHARGEMENT"}).attrs["action"]
-print("found url: "+popupUrl)
+if debug:
+	print("found url: "+popupUrl)
 popupData = urllib.parse.urlencode({
 	'WD_BUTTON_CLICK_': "BTN_INITAB",
 	'WD_ACTION_': "",
@@ -78,7 +85,8 @@ html[2] = page[2].read()
 # The ticket is in form url, or in content Javascript as var _PU_
 currentSoup = bs4.BeautifulSoup(html[2], 'html.parser')
 currentActionUrl = currentSoup.find("form", {"name":"SYW_EC_MENUPRINCIPAL"}).attrs["action"]
-print("found url: "+currentActionUrl)
+if debug:
+	print("found url: "+currentActionUrl)
 
 # Ask for activity resume
 page[3] = urlOpener.open("https://cra.d2-si.eu"+currentActionUrl+"?WD_ACTION_=MENU&ID=OPM_MO_ACTIVITETEMPSPASSES")
@@ -89,6 +97,7 @@ htmlFile = codecs.open(sys.argv[2], "w", "iso-8859-1")
 html = html[3].decode("iso-8859-1")
 try:
 	htmlFile.write(html)
-	print("data written to "+sys.argv[2]
+	if debug:
+		print("data written to "+sys.argv[2])
 finally:
 	htmlFile.close()
