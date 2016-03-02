@@ -15,6 +15,9 @@ Xml:
  * BeautifulSoup
  * lxml (recomended)
 
+Http:
+ * certifi
+
 I recomand to set up a virtualenv in order to run the tool.
 
 ### System packages

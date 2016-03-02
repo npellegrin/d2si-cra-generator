@@ -3,8 +3,7 @@
 # FIXME: python scripts should comunicate without writing intermediate files
 
 # Get html for current month
-# TODO
-#python DownloadSyges.py data/credentials.json data/syges.html
+python src/DownloadSyges.py src/data/credentials.json src/data/syges.html
 
 # Extract data from html
 python src/ExtractData.py src/data/syges.html src/data/syges_data.json
