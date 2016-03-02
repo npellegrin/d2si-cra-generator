@@ -21,7 +21,7 @@ sygesSoup = bs4.BeautifulSoup(sygesFile.read(), 'html.parser')
 divData = sygesSoup.find(id="ZRP_PAGPRI_1")
 
 # Retrieve data row
-rowData = divData.table.tbody.contents[3]
+rowData = divData.table.contents[2]
 
 # Get data
 data = rowData.find_all("input")
@@ -30,7 +30,9 @@ data = rowData.find_all("input")
 extracted = {}
 for tag in data:
 	if "title" in tag.attrs and "value" in tag.attrs:
-		extracted[tag["title"]] = tag["value"]
+		titleTokens = tag["title"].split(" ")
+		if titleTokens[0] in ("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"):
+			extracted[tag["title"]] = tag["value"]
 
 # Save data
 json.dump(extracted, open(sys.argv[2], 'w'))
