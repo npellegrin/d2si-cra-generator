@@ -42,4 +42,5 @@ pip install openpyxl
 pip install pillow
 pip install lxml
 pip install beautifulsoup4
+pip install certifi
 ```
